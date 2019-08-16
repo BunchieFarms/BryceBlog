@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationEnd } from '@angular/router';
+import { phrases } from '../assets/js/phrases';
 
 @Component({
   selector: 'app-root',
@@ -8,22 +10,17 @@ import { Component, OnInit } from '@angular/core';
 
 export class AppComponent implements OnInit {
 
-  titleAddendums = [
-    'For my eyes only',
-    'Please leave',
-    'Now with more sad',
-    'Next page visit picks up the hosting bill!',
-    'Now with more npm modules!',
-    'No, my car still isn\'t running',
-    'You\'re still here?',
-    'What even is a \"Full-Stack Software Engineer\"',
-    'University only taught me how to Google the answers to all my problems',
-    'I am a professional monkey'
-  ];
+  constructor(private router: Router) {
+    router.events.subscribe((val) => {
+        if (val instanceof NavigationEnd) {
+          this.ngOnInit();
+        }
+    });
+  }
 
   subTitle: string;
 
   ngOnInit() {
-    this.subTitle = this.titleAddendums[Math.floor(Math.random() * this.titleAddendums.length)];
+    this.subTitle = phrases[Math.floor(Math.random() * phrases.length)];
   }
 }

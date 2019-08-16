@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { LandingPageModule } from './landingPage/landingPage.module';
+import { ContentModule } from './content/content';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { LandingPageModule } from './landingPage/landingPage.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LandingPageModule
+    LandingPageModule,
+    ContentModule
   ],
   providers: [],
   bootstrap: [AppComponent]

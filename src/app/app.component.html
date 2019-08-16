@@ -1,6 +1,7 @@
-<div class="container-fluid w-75">
-  <h1>Bryce's Blog</h1>
-  <h5 class="text-muted">{{subTitle}}</h5>
-  <hr>
+<div class="container">
+  <div class="border-bottom mb-3">
+    <h1><a routerLink='' class="text-decoration-none">Bryce's Blog</a></h1>
+    <h5><a routerLink='addPhrase' class="text-muted text-decoration-none">{{subTitle}}</a></h5>
+  </div>
   <router-outlet></router-outlet>
 </div>
